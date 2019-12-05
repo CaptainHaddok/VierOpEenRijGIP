@@ -1,8 +1,6 @@
-
-
 import Bord
-player1 = 1
-player2 = 2
+player1 = '1'
+player2 = '2'
 example = Bord.Bord("Bord 1",player1,player2)
 
 while True:
@@ -10,10 +8,10 @@ while True:
 
     example.PutIn(inpt1,player1)
     print(example)
+    print(example.winrate)
 
     inpt1 = int(input("Welke rij?"))
 
     example.PutIn(inpt1, player2)
-
-
     print(example)
+    print(example.winrate)
