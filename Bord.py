@@ -40,7 +40,3 @@ class Bord:
                 curPos = curPos + 1
         self.rooster[curPos - 1][row] = player
         self.UpdateBord()
-        
-        #Kanker
-        #lmao
-        #jksdhfkhsdjfgdjsbvgkjjdfbv j;
