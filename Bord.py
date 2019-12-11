@@ -40,3 +40,6 @@ class Bord:
                 curPos = curPos + 1
         self.rooster[curPos - 1][row] = player
         self.UpdateBord()
+
+        
+       #nee deze shit blijft staan
