@@ -1,33 +1,14 @@
 import Bord as B
 def Check2InRow(inputBord, inputPlayer):
+    # TODO: cheker fixen
     score = 0
-    player = inputPlayer
-    bord = inputBord
-    for y in range(len(bord.rooster)):          #checken voor elke plaats in het rooster
-        for x in range(len(bord.rooster[0])):
-            if bord.rooster[y][x] == player:    #als het de speler is voor wie we score willen bepalen
-                Xcheck = True                   # Variabelen klaarzetten om te zien of alle richtingen gecheckt moeten worden
-                Ycheck = True
-                DiaDownCheck = True
-                DiaUpCheck = True
-                for i in range(3):              #Je moet voor zowel de direct naast huidige pos als die daarnaast en die daarnaast checken
-                    if x+1+i >= len(bord.rooster[0]): Xcheck = False                            #Checken voor alle rihtingen of die plaats voor te checken echt bestaat
-                    if y+1+i >= len(bord.rooster): Ycheck = False                               # Zo niet dan hoef je ook niet meer te kijken of die daarna wel bestaat
-                    if x+1+i >= len(bord.rooster[0]) or y+1+i >= len(bord.rooster): DiaDownCheck = False
-                    if x+1+i >= len(bord.rooster[0]) or y-1-i < 0: DiaUpCheck = False
-
-                    if Xcheck == True:                                                    #als ze bestaan, checken of het een plaats van speler 1 is, dan score +1
-                        if bord.rooster[y][x+1+i] == player: score +=1                    #als het dan geen nul is, moet het wel speler 2 zijn, en dan is alles daarna ook geen 4 op een rij meer
-                        elif bord.rooster[y][x+1+i] != '0': Xcheck = False
-                    if Ycheck == True:
-                        if bord.rooster[y+1+i][x] == player: score +=1
-                        elif bord.rooster[y+1+i][x] != '0': Ycheck = False
-                    if DiaDownCheck == True:
-                        if bord.rooster[y+1+i][x+1+i] == player: score +=1
-                        elif bord.rooster[y+1+i][x+1+i] != '0': DiaDownCheck = False
-                    if DiaUpCheck == True:
-                        if bord.rooster[y-1-i][x+1+i] == player: score +=1
-                        elif bord.rooster[y-1-i][x+1+i] != '0': DiaUpCheck = False
+    for y in range(len(inputBord.rooster)):                             # horizontaal --> dir = 0
+        for x in range(len(inputBord.rooster[0])):                      # verticaal --> dir = 1
+            if inputBord.rooster[y][x] == inputPlayer:                  # schuinbeneden --> dir = 2
+                if CheckForAmount(inputBord, x, y, 0) == 2: score += 1  # schuinboven --> dir = 3
+                if CheckForAmount(inputBord, x, y, 1) == 2: score += 1
+                if CheckForAmount(inputBord, x, y, 2) == 2: score += 1
+                if CheckForAmount(inputBord, x, y, 3) == 2: score += 1
     return score
 
 
@@ -47,3 +28,32 @@ def CheckWin(inputBord, inputPlayer):
     score = 0
     # TODO: cheker fixen
     return score
+def CheckForAmount(inputBord,inpX,inpY,inpDirection):
+    amount = 1
+    player = inputBord.rooster[inpY][inpX]
+    len = 1;
+    if inpDirection == 0:
+        neg = True
+        pos = True
+        for i in range(3):
+            if neg == True:
+                try:
+                    if inputBord.rooster[inpY][inpX -1 - i] == player:
+                        len += 1
+                        amount += 1
+                    elif inputBord.rooster[inpY][inpX -1 -i] == 0:
+                        len += 1
+                    else: neg = False
+                except: neg = False
+            if pos == True:
+                try:
+                    if inputBord.rooster[inpY][inpX + 1 + i] == player:
+                        len += 1
+                        amount += 1
+                    elif inputBord.rooster[inpY][inpX + 1 +i] == 0:
+                        len += 1
+                    else: pos = False
+                except: pos = False
+    if len < 4 : amount == 0
+    #TODO Check voor hoeveel stenen er zijn in 1 rij,en zien dat het vier op een rij kan maken
+    return amount
