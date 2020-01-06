@@ -25,7 +25,7 @@ class Bord:
         score -= Chekker.Check2InRow(self, self.player2)
         score -= 20 * Chekker.Check3InRow(self, self.player2)
         return score
-        # TODO: functies fixen
+        # TODO: functies fixen, Enkel MiddenChecker nog
 
     def UpdateBord(self):
         self.winrate = self.CheckScore()

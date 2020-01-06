@@ -48,7 +48,6 @@ def CheckForAmount(inputBord,inpX,inpY,inpXDirection,inpYDirection, inpPlayer):
                 nPlayer += 1
         except:
             pass
-    #TODO Check voor hoeveel stenen er zijn in 1 rij,en zien dat het vier op een rij kan maken
     if nOpen + nPlayer == 4: amount = nPlayer
     return amount
 
