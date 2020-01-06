@@ -20,13 +20,6 @@ def Check3InRow(inputBord, inputPlayer):
             if CheckForAmount(inputBord, x, y, 1, -1, inputPlayer) == 3: score += 1
     return score * 5
 
-
-def CheckMiddle(inputBord, inputPlayer):
-    score = 0
-    # TODO: cheker fixen
-    return score
-
-
 def CheckWin(inputBord, inputPlayer):
     score = 0
     for y in range(len(inputBord.rooster)):

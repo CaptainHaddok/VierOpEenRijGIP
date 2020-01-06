@@ -16,3 +16,4 @@ while True:
     example.PutIn(inpt1, player2)
     print(example)
     print(example.winrate)
+    MM.CalcBord(example,3,player1)

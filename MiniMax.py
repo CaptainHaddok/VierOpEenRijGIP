@@ -31,13 +31,17 @@ def minimax(depth, nodeIndex, maximizingPlayer,values, alpha, beta,Difficulty):
                 break
         return best
 
-def CalcValues(Bord, Difficulty):
+def CalcValues(Bord, Difficulty,Player):
     values = {}
     for i in range(int(math.pow(7,Difficulty))):
-        pass
+        b = Bord
+        for j in range(Difficulty-1):
+            b.PutIn(int(i % math.pow(7,j+1)),Player)
+        values[i] = b.winrate
+        if i % 7 == 3: values[i] += 1
     return values
 
     #TODO: Winrates geven
-def CalcBord(Bord, Difficulty):
+def CalcBord(Bord, Difficulty,Player):
     #TODO: Winrates wete wel
-    minimax(0, 0, True, CalcValues(Bord, Difficulty), -10000000, 10000000, Difficulty)
+    return minimax(0, 0, True, CalcValues(Bord, Difficulty,Player), -10000000, 10000000, Difficulty)
