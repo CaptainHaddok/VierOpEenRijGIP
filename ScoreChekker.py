@@ -1,4 +1,5 @@
 import Bord
+import array
 def Check2InRow(inputBord, inputPlayer):
     score = 0
     for y in range(len(inputBord.rooster)):

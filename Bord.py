@@ -1,5 +1,5 @@
 import  ScoreChekker as Chekker
-
+import array
 class Bord:
     def __init__(self, naam = "Bord", player1 = '1', player2 = '2',winrate = 0):
         self.naam = naam
