@@ -52,4 +52,3 @@ def CheckForAmount(inputBord,inpX,inpY,inpXDirection,inpYDirection, inpPlayer):
     if nOpen + nPlayer == 4: amount = nPlayer
     return amount
 
-#Testen kut
