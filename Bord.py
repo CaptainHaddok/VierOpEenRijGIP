@@ -30,11 +30,11 @@ class Bord:
 
     def PutIn(self, row, player):
         curVal = '0'
-        curPos = 0
+        Hoogte = 0
 
-        while curVal == '0' and curPos != 6:
-            curVal = self.rooster[curPos][row]
+        while curVal == '0' and Hoogte != 6:
+            curVal = self.rooster[Hoogte][row]
             if curVal == '0':
-                curPos = curPos + 1
-        self.rooster[curPos - 1][row] = player
-        self.UpdateBord()
+                Hoogte = Hoogte + 1
+        if Hoogte !=0: self.rooster[Hoogte - 1][row] = player
+

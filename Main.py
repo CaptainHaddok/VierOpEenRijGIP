@@ -5,15 +5,13 @@ player2 = '2'
 example = Bord.Bord("Bord 1",player1,player2)
 
 while True:
+    print(MM.CalcBord(example, 1))
     inpt1 = int(input("Welke rij?"))
 
     example.PutIn(inpt1,player1)
     print(example)
-    print(example.winrate)
 
     inpt1 = int(input("Welke rij?"))
 
     example.PutIn(inpt1, player2)
     print(example)
-    print(example.winrate)
-    MM.CalcBord(example,3,player1)
