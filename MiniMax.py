@@ -44,10 +44,9 @@ def CalcValues(InpBord, Difficulty):
             if j%2 == 0: player = b.player1                    #PlayerBepalen
             else: player = b.player2                           #PlayerBepalen
             b.PutIn(math.trunc(i/math.pow(7,Difficulty-j-1))%7,player)
-
         b.UpdateBord()
         values[i] = b.winrate
-        if i%7 == 3: values[i] +=1
+        if 3 * math.pow(7, Difficulty - 1) <= i or math.pow(7, Difficulty) - 3 * math.pow(7, Difficulty - 1) > i :values[i] += 1
     return values
 
     #TODO: Winrates geven
