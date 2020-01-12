@@ -46,5 +46,5 @@ def CalcValues(InpBord, Difficulty):
     return values
 
 def CalcBord(InpBord, Difficulty):
-    #TODO: Winrates wete wel
+    #TODO: Winrates Optimalisatie
     return math.trunc(minimax(0,0,True,CalcValues(InpBord,Difficulty),Difficulty)/math.pow(7,Difficulty-1))
