@@ -14,4 +14,4 @@ while True:
 
     example.PutIn(inpt1, player2)
     print(example)
-    print(MM.CalcBord(example, 2))
+    print(MM.CalcBord(example, 3))
