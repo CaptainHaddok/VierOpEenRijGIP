@@ -1,21 +1,29 @@
 import Bord
 import math
-
+BestIndex = 0
 def minimax(curDepth, nodeIndex,maxTurn, scores, Difficulty):
-    if curDepth == Difficulty: return scores[nodeIndex]
+    if curDepth == Difficulty: return nodeIndex
 
     if maxTurn:
         Best = -10000000
+        BestPos = 0
         for i in range(7):
-            x = minimax(curDepth+1,nodeIndex * 7 + i, False, scores, Difficulty)
-            if x >= Best: Best = x
-        return x
+            pos = minimax(curDepth+1,nodeIndex * 7 + i, False, scores, Difficulty)
+            x = scores[pos]
+            if x >= Best:
+                Best = x
+                BestPos = pos
+        return BestPos
     else:
         Worst = 10000000
+        WorstPos = 0
         for i in range(7):
-            x = minimax(curDepth+1,nodeIndex * 7 + i, True, scores, Difficulty)
-            if x <= Worst: Worst = x
-        return x
+            pos = minimax(curDepth + 1, nodeIndex * 7 + i, False, scores, Difficulty)
+            x = scores[pos]
+            if x <= Worst:
+                Worst = x
+                WorstPos = pos
+        return WorstPos
 
 
 
@@ -39,4 +47,4 @@ def CalcValues(InpBord, Difficulty):
 
 def CalcBord(InpBord, Difficulty):
     #TODO: Winrates wete wel
-    return minimax(0,0,True,CalcValues(InpBord,Difficulty),Difficulty)
+    return math.trunc(minimax(0,0,True,CalcValues(InpBord,Difficulty),Difficulty)/math.pow(7,Difficulty-1))
