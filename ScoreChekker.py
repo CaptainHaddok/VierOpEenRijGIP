@@ -46,7 +46,7 @@ def CheckForAmount(inputBord,inpX,inpY,inpXDirection,inpYDirection, inpPlayer):
     return amount
 
 def Horizontal(inputBord,inpPlayer):
-    PossibleFourInARow[6][5]
+    #PossibleFourInARow[6][5]
     for x in range(5):
         for y in range(6):
             Aantalplayer = 0
@@ -54,4 +54,4 @@ def Horizontal(inputBord,inpPlayer):
             for i in range(4):
                 if inputBord.rooster[y][x+i] == inpPlayer: Aantalplayer += 1
                 if inputBord.rooster[y][x + i] == '0': empty += 1
-            if empty + Aantalplayer == 4:
+            #if empty + Aantalplayer == 4:

@@ -23,6 +23,7 @@ class Bord:
         score += Chekker.CheckWin(self, self.player1)
         score -= Chekker.Check2InRow(self, self.player2)
         score -= 20 * Chekker.Check3InRow(self, self.player2)
+        score -= Chekker.CheckWin(self, self.player2)
         return score
 
     def UpdateBord(self):

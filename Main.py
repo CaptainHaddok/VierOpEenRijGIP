@@ -5,7 +5,7 @@ player2 = '2'
 example = Bord.Bord("Bord 1",player1,player2)
 
 while True:
-    k = MM.CalcBord(example, 1)
+    k = MM.CalcBord(example, 5)
     print(k)
     example.PutIn(k,player1)
     print(example)
