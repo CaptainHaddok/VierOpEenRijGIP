@@ -24,8 +24,9 @@ class Bord:
         score += Chekker.DiaUp(self, self.player1)
         score -= Chekker.Horizontal(self, self.player2)
         score -= Chekker.Vertical(self, self.player2)
-        score -= Chekker.DiaDown(self, self.player2)
         score -= Chekker.DiaUp(self, self.player2)
+        score -= Chekker.DiaDown(self, self.player2)
+
         return score
 
     def UpdateBord(self):

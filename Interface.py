@@ -17,6 +17,7 @@ running = True
 
 #Menu layout
 pygame.display.set_caption('GIP - Wieter en Warre')
+
 font = pygame.font.Font('freesansbold.ttf', 32)
 titel = font.render('Connect4 Robot', True, color.Black)
 titelRect = titel.get_rect()
@@ -37,7 +38,11 @@ while running:
                 running = False
 
     screen.fill((255, 255, 255))
-    pygame.draw.rect(screen, color.Blue, (250,300,1000,600))
+    pygame.draw.rect(screen, color.Blue, (250,300,705,610))
+    for y in range(7):
+        for x in range(7):
+            pygame.draw.circle(screen,color.White,(300+y*100,350+x*100),35)
+
     screen.blit(titel, titelRect)
     screen.blit(namen, namenRect)
     pygame.display.flip()
