@@ -3,7 +3,7 @@ import array
 class Bord:
     def __init__(self, naam = "Bord", player1 = '1', player2 = '2',winrate = 0):
         self.naam = naam
-        self.rooster = [['0','0','0','0','0','0','0'],['0','0','0','0','0','0','0'],['0','0','0','0','0','0','0'],['0','0','0','0','0','0','0'],['0','0','0','0','0','0','0'],['0','0','0','0','0','0','0'],]
+        self.rooster = [['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],]
         self.winrate = winrate
         self.player1 = player1
         self.player2 = player2
@@ -32,12 +32,12 @@ class Bord:
         self.winrate = self.CheckScore()
 
     def PutIn(self, row, player):
-        curVal = '0'
+        curVal = '.'
         Hoogte = 0
 
-        while curVal == '0' and Hoogte != 6:
+        while curVal == '.' and Hoogte != 6:
             curVal = self.rooster[Hoogte][row]
-            if curVal == '0':
+            if curVal == '.':
                 Hoogte = Hoogte + 1
         if Hoogte !=0: self.rooster[Hoogte - 1][row] = player
 

@@ -8,12 +8,12 @@ def Horizontal(inputBord,inpPlayer):
             empty = 0
             for i in range(4):
                 if inputBord.rooster[y][x + i] == inpPlayer: Aantalplayer += 1
-                if inputBord.rooster[y][x + i] == '0': empty += 1
+                if inputBord.rooster[y][x + i] == '.': empty += 1
             aantal = 0
             if empty + Aantalplayer == 4: aantal = Aantalplayer
             if aantal == 2: score += 2
-            if aantal == 3 and inpPlayer == '1': score+= 5
-            if aantal == 3 and inpPlayer != '1': score += 100
+            if aantal == 3 and inpPlayer == 'X': score+= 5
+            if aantal == 3 and inpPlayer != 'X': score += 100
             if aantal == 4: score += 1000000
     return score
 def Vertical(inputBord,inpPlayer):
@@ -24,12 +24,12 @@ def Vertical(inputBord,inpPlayer):
             empty = 0
             for i in range(4):
                 if inputBord.rooster[y + i][x] == inpPlayer: Aantalplayer += 1
-                if inputBord.rooster[y + i][x] == '0': empty += 1
+                if inputBord.rooster[y + i][x] == '.': empty += 1
             aantal = 0
             if empty + Aantalplayer == 4: aantal = Aantalplayer
             if aantal == 2: score += 2
-            if aantal == 3 and inpPlayer == '1': score += 5
-            if aantal == 3 and inpPlayer != '1': score += 100
+            if aantal == 3 and inpPlayer == 'X': score += 5
+            if aantal == 3 and inpPlayer != 'X': score += 100
             if aantal == 4: score += 1000000
     return score
 def DiaDown(inputBord,inpPlayer):
@@ -40,12 +40,12 @@ def DiaDown(inputBord,inpPlayer):
             empty = 0
             for i in range(4):
                 if inputBord.rooster[y + i][x + i] == inpPlayer: Aantalplayer += 1
-                if inputBord.rooster[y + i][x + i] == '0': empty += 1
+                if inputBord.rooster[y + i][x + i] == '.': empty += 1
             aantal = 0
             if empty + Aantalplayer == 4: aantal = Aantalplayer
             if aantal == 2: score += 2
-            if aantal == 3 and inpPlayer == '1': score += 5
-            if aantal == 3 and inpPlayer != '1': score += 100
+            if aantal == 3 and inpPlayer == 'X': score += 5
+            if aantal == 3 and inpPlayer != 'X': score += 100
             if aantal == 4: score += 1000000
     return score
 
@@ -57,12 +57,12 @@ def DiaUp(inputBord,inpPlayer):
             empty = 0
             for i in range(4):
                 if inputBord.rooster[y - i][x + i] == inpPlayer: Aantalplayer += 1
-                if inputBord.rooster[y - i][x + i] == '0': empty += 1
+                if inputBord.rooster[y - i][x + i] == '.': empty += 1
             aantal = 0
             if empty + Aantalplayer == 4: aantal = Aantalplayer
             if aantal == 2: score += 2
-            if aantal == 3 and inpPlayer == '1': score += 5
-            if aantal == 3 and inpPlayer != '1': score += 100
+            if aantal == 3 and inpPlayer == 'X': score += 5
+            if aantal == 3 and inpPlayer != 'X': score += 100
             if aantal == 4: score += 1000000
     return score
 
