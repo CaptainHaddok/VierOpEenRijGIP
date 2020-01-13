@@ -18,12 +18,21 @@ class Bord:
 
     def CheckScore(self):
         score = 0
-        score += Chekker.Check2InRow(self, self.player1)
-        score += Chekker.Check3InRow(self, self.player1)
-        score += Chekker.CheckWin(self, self.player1)
-        score -= Chekker.Check2InRow(self, self.player2)
-        score -= 20 * Chekker.Check3InRow(self, self.player2)
-        score -= Chekker.CheckWin(self, self.player2)
+        #score += Chekker.Check2InRow(self, self.player1)
+        #score += Chekker.Check3InRow(self, self.player1)
+        #score += Chekker.CheckWin(self, self.player1)
+        #score -= Chekker.Check2InRow(self, self.player2)
+        #score -= 20 * Chekker.Check3InRow(self, self.player2)
+        #score -= Chekker.CheckWin(self, self.player2)
+
+        score += Chekker.Horizontal(self,self.player1)
+        score += Chekker.Vertical(self, self.player1)
+        score += Chekker.DiaDown(self, self.player1)
+        score += Chekker.DiaUp(self, self.player1)
+        score -= Chekker.Horizontal(self, self.player2)
+        score -= Chekker.Vertical(self, self.player2)
+        score -= Chekker.DiaDown(self, self.player2)
+        score -= Chekker.DiaUp(self, self.player2)
         return score
 
     def UpdateBord(self):
