@@ -18,7 +18,7 @@ def minimax(curDepth, nodeIndex,maxTurn, scores, Difficulty):
         Worst = 10000000
         WorstPos = 0
         for i in range(7):
-            pos = minimax(curDepth + 1, nodeIndex * 7 + i, False, scores, Difficulty)
+            pos = minimax(curDepth + 1, nodeIndex * 7 + i, True, scores, Difficulty)
             x = scores[pos]
             if x <= Worst:
                 Worst = x
