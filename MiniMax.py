@@ -11,6 +11,12 @@ def minimax(curDepth, nodeIndex,maxTurn, Difficulty,InpBord):
             pos = minimax(curDepth+1,nodeIndex * 7 + i, False, Difficulty,InpBord)
             x = CalcValue(InpBord,Difficulty,pos)
             if x >= Best:
+                if x >= 1000000:
+                    if curDepth == 0:
+                        Best = x
+                        BestPos = pos
+                        return BestPos
+                        break
                 Best = x
                 BestPos = pos
         return BestPos
@@ -21,6 +27,13 @@ def minimax(curDepth, nodeIndex,maxTurn, Difficulty,InpBord):
             pos = minimax(curDepth + 1, nodeIndex * 7 + i, True, Difficulty,InpBord)
             x = CalcValue(InpBord, Difficulty, pos)
             if x <= Worst:
+                if x <= -100:
+                    if curDepth == 0:
+                        Worst = x
+                        WorstPos = pos
+                        return WorstPos
+                        break
+
                 Worst = x
                 WorstPos = pos
         return WorstPos
