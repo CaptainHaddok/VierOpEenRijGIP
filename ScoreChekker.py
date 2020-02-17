@@ -3,7 +3,6 @@ import array
 import MiniMax
 def Horizontal(inputBord,inpPlayer):
     score = 0
-    win = 0
     for x in range(4):
         for y in range(6):
             Aantalplayer = 0
@@ -24,7 +23,6 @@ def Horizontal(inputBord,inpPlayer):
     return score
 def Vertical(inputBord,inpPlayer):
     score = 0
-    win = False
     for x in range(7):
         for y in range(3):
             Aantalplayer = 0
@@ -45,7 +43,6 @@ def Vertical(inputBord,inpPlayer):
     return score
 def DiaDown(inputBord,inpPlayer):
     score = 0
-    win = False
     for x in range(4):
         for y in range(3):
             Aantalplayer = 0
@@ -67,7 +64,6 @@ def DiaDown(inputBord,inpPlayer):
 
 def DiaUp(inputBord,inpPlayer):
     score = 0
-    win =False
     for x in range(4):
         for y in range(3,6):
             Aantalplayer = 0

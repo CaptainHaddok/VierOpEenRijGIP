@@ -44,10 +44,10 @@ class Bord:
 
     def Checkwin(self):
         win = 0
-        if Chekker.Horizontal(self,self.player1) >= 1000000 or Chekker.Vertical(self, self.player1) >= 1000000 or Chekker.DiaDown(self, self.player1) >= 1000000 or Chekker.DiaUp(self, self.player1) >= 1000000:
+        if Chekker.Horizontal(self, self.player1) >= 1000000 or Chekker.Vertical(self, self.player1) >= 1000000 or Chekker.DiaDown(self, self.player1) >= 1000000 or Chekker.DiaUp(self, self.player1) >= 1000000:
             win = 1
             return win
-        if Chekker.Horizontal(self,self.player2) >= 100 or Chekker.Vertical(self, self.player2) >= 100 or Chekker.DiaDown(self, self.player2) >= 100 or Chekker.DiaUp(self, self.player2) >= 100:
+        if Chekker.Horizontal(self, self.player2) >= 1000000 or Chekker.Vertical(self, self.player2) >= 1000000 or Chekker.DiaDown(self, self.player2) >= 1000000 or Chekker.DiaUp(self, self.player2) >= 1000000:
             win = 2
             return win
         else:
