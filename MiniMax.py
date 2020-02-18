@@ -33,7 +33,6 @@ def minimax(curDepth, nodeIndex,maxTurn, Difficulty,InpBord):
                         WorstPos = pos
                         return WorstPos
                         break
-
                 Worst = x
                 WorstPos = pos
         return WorstPos

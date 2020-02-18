@@ -33,14 +33,15 @@ class Bord:
         self.winrate = self.CheckScore()
 
     def PutIn(self, row, player):
-        curVal = '.'
+        curVal = self.rooster[0][row]
         Hoogte = 0
 
         while curVal == '.' and Hoogte != 6:
             curVal = self.rooster[Hoogte][row]
             if curVal == '.':
                 Hoogte = Hoogte + 1
-        if Hoogte !=0: self.rooster[Hoogte - 1][row] = player
+        if Hoogte !=0:
+            self.rooster[Hoogte - 1][row] = player
 
     def Checkwin(self):
         win = 0
