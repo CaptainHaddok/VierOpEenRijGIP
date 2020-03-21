@@ -1,6 +1,6 @@
 import Bord
 import MiniMax as MM
-import InputHandler as IH
+import InputOutputHandler as IOH
 
 
 pins0 = [18,23,24,25,12,16,20]
@@ -9,7 +9,7 @@ pins1 = [4,17,27,22,5,6,13]
 player1 = 'X'
 player2 = 'O'
 
-inpH = IH.InputHandler(list(reversed(pins0)),list(reversed(pins1)))
+inpH = IOH.InputHandler(list(reversed(pins0)),list(reversed(pins1)))
 example = Bord.Bord("Bord 1",player1,player2)
 
 win = 0
