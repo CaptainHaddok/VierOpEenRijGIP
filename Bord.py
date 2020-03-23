@@ -1,9 +1,8 @@
-import  ScoreChecker as Chekker
+import  ScoreChecker as Checker
 class Bord:
-    def __init__(self, naam = "Bord", player1 = '1', player2 = '2',winrate = 0):
-        self.naam = naam
+    def __init__(self, player1 = '1', player2 = '2'):
         self.rooster = [['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],]
-        self.winrate = winrate
+        self.winrate = 0
         self.player1 = player1
         self.player2 = player2
 
@@ -17,14 +16,14 @@ class Bord:
 
     def CheckScore(self):
         score = 0
-        score += Chekker.Horizontal(self,self.player1)
-        score += Chekker.Vertical(self, self.player1)
-        score += Chekker.DiaDown(self, self.player1)
-        score += Chekker.DiaUp(self, self.player1)
-        score -= Chekker.Horizontal(self, self.player2)
-        score -= Chekker.Vertical(self, self.player2)
-        score -= Chekker.DiaUp(self, self.player2)
-        score -= Chekker.DiaDown(self, self.player2)
+        score += Checker.Horizontal(self,self.player1)
+        score += Checker.Vertical(self, self.player1)
+        score += Checker.DiaDown(self, self.player1)
+        score += Checker.DiaUp(self, self.player1)
+        score -= Checker.Horizontal(self, self.player2)
+        score -= Checker.Vertical(self, self.player2)
+        score -= Checker.DiaUp(self, self.player2)
+        score -= Checker.DiaDown(self, self.player2)
 
         return score
 
@@ -41,13 +40,14 @@ class Bord:
                 Hoogte = Hoogte + 1
         if Hoogte !=0:
             self.rooster[Hoogte - 1][row] = player
+        self.UpdateBord(self);
 
     def Checkwin(self):
         win = 0
-        if Chekker.Horizontal(self, self.player1) >= 1000000 or Chekker.Vertical(self, self.player1) >= 1000000 or Chekker.DiaDown(self, self.player1) >= 1000000 or Chekker.DiaUp(self, self.player1) >= 1000000:
+        if Checker.Horizontal(self, self.player1) >= 1000000 or Checker.Vertical(self, self.player1) >= 1000000 or Checker.DiaDown(self, self.player1) >= 1000000 or Checker.DiaUp(self, self.player1) >= 1000000:
             win = 1
             return win
-        if Chekker.Horizontal(self, self.player2) >= 1000000 or Chekker.Vertical(self, self.player2) >= 1000000 or Chekker.DiaDown(self, self.player2) >= 1000000 or Chekker.DiaUp(self, self.player2) >= 1000000:
+        if Checker.Horizontal(self, self.player2) >= 1000000 or Checker.Vertical(self, self.player2) >= 1000000 or Checker.DiaDown(self, self.player2) >= 1000000 or Checker.DiaUp(self, self.player2) >= 1000000:
             win = 2
             return win
         else:

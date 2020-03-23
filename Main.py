@@ -10,7 +10,7 @@ player1 = 'X'
 player2 = 'O'
 
 inpH = IOH.InputHandler(list(reversed(pins0)),list(reversed(pins1)))
-example = Bord.Bord("Bord 1",player1,player2)
+example = Bord.Bord(player1,player2)
 
 win = 0
 print("You can start")

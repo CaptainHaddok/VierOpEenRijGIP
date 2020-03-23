@@ -40,7 +40,7 @@ def minimax(curDepth, nodeIndex,maxTurn, Difficulty,InpBord):
 
 
 def CalcValue(InpBord, Difficulty,i):
-    b = Bord.Bord("Test", InpBord.player1, InpBord.player2)
+    b = Bord.Bord(InpBord.player1, InpBord.player2)
     for y in range(6):
         for x in range(7):
             b.rooster[y][x] = InpBord.rooster[y][x]
