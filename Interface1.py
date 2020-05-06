@@ -2,11 +2,11 @@ import pygame
 
 class color():
     black = (0, 0, 0)
-    white = (255, 255, 255)
-    blue = (0, 0, 255)
-    green = (0, 255, 0)
-    red = (255, 0, 0)
-    yellow = (255, 255, 0)
+    white = (255, 245, 214)
+    blue = (69, 81, 255)
+    green = (81, 173, 83)
+    red = (255, 100, 69)
+    yellow = (245, 218, 83)
 
 
 pygame.init()
