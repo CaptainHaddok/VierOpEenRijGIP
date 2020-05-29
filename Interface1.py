@@ -1,6 +1,6 @@
 import pygame
 
-class color():
+class color:
     black = (0, 0, 0)
     white = (255, 245, 214)
     blue = (69, 81, 255)
